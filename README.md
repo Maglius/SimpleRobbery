@@ -1,4 +1,4 @@
-# SimpleRobbery — Paper plugin (0.5.0 test source)
+# SimpleRobbery — Paper plugin
 
 A standalone Paper 26.2 Java 25 robbery plugin. **No resource pack required.**
 

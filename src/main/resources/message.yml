@@ -1,0 +1,245 @@
+# All announcements, GUI labels and status messages. & colors and SimpleRobbery placeholders supported.
+prefix: '&6&lRobbery &8» &r'
+errors:
+  no-permission: '&cYou do not have permission.'
+  players-only: '&cThis command is only available in-game.'
+  unknown-command: '&cUnknown subcommand. Type &e/robbery help&c.'
+  robbery-not-found: '&cRobbery &e{name} &cdoes not exist.'
+  exists: '&cA robbery with that name already exists.'
+  no-selection: '&cSelect two corners with /robbery wand before creating a robbery.'
+  different-worlds: '&cBoth selection corners must be in the same world.'
+  not-in-region: '&cThis vault must be inside the robbery region.'
+  player-outside-region: '&cYou must be inside the robbery region to crack its vault.'
+  invalid-number: '&cEnter a valid number within the allowed range.'
+  too-far: '&cStay near the vault to keep cracking it.'
+  creative: '&cRobberies cannot be completed in Creative or Spectator mode.'
+  invalid-vault: '&cThis robbery has no vault blocks configured yet.'
+  locked: '&cThis robbery is currently closed.'
+  already-robbed: '&cYou already robbed this vault during the current opening.'
+  busy: '&cYou are already cracking another vault.'
+  limit: '&cThe maximum number of rewards has been reached.'
+  console-only: '&cThat command is unavailable from the console.'
+  no-target: '&cYou must aim at a vault block to begin cracking.'
+  disabled: '&cRobbery interaction is temporarily disabled.'
+  invalid-skin-name: '&cEnter a valid Mojang player name (3-16 letters, numbers or underscores).'
+admin:
+  help: '&e/robbery wand &7| &e/robbery create <name> &7| &e/robbery edit <name> &7| &e/robbery vault <name> &7| &e/robbery region <name> &7|
+    &e/robbery start|stop <name> &7| &e/robbery delete <name> &7| &e/robbery list &7| &e/robbery reload'
+  wand-given: '&aSelection wand given. Left click for position 1, right click for position 2.'
+  pos1: '&aPosition 1 set: &f{x}, {y}, {z} &7({world})'
+  pos2: '&aPosition 2 set: &f{x}, {y}, {z} &7({world})'
+  select-region: '&eNow select the robbery region of &f{name}&e with your wand.'
+  select-vault: '&eNow select the vault blocks of &f{name}&e with your wand.'
+  region-saved: '&aRobbery region for &f{name}&a updated.'
+  vault-saved: '&aVault area for &f{name}&a saved.'
+  created: '&aCreated robbery &f{name}&a. Configure it in the GUI.'
+  deleted: '&cDeleted robbery &f{name}&c.'
+  cancelled: '&7Selection or chat input cancelled.'
+  prompt: '&eType a new value for &f{setting}&e in chat, or type &ccancel&e.'
+  saved: '&aUpdated &f{setting}&a to &f{value}&a.'
+  chance-prompt: '&eEnter a chance from &f0.01 &eto &f100&e for this reward (e.g. 5.5), or &ccancel&e.'
+  reward-chance: '&aUpdated reward chance to &f{chance}%&a.'
+  reload: '&aConfiguration, messages, menus, and Discord settings reloaded.'
+  list-line: '&e{name}&7 - {state} &7({opens_in} till next opening) &8[{world} {coords}]'
+  list-region: '&7  Region: &f{world} &7[{coords}]'
+  list-vault: '&7  Vault: &f{world} &7[{coords}]'
+  list-empty: '&7No robberies have been created.'
+  force-open: '&aForced robbery &f{name}&a to open.'
+  force-close: '&cForced robbery &f{name}&c to close.'
+  rewards-help: '&7Put items in the top slots. Right-click a reward to edit its chance. All item metadata is saved.'
+  guard-type-updated: '&aBodyguard type is now &e{value}&a.'
+  guard-skin-prompt: '&eType a Mojang player name for the bodyguard skin in chat, or &ccancel&e.'
+  guard-skin-updated: '&aPlayer bodyguard skin set to &e{value}&a. The skin loads when guards spawn.'
+  escape-updated: '&aRequire players to escape the region for rewards: &e{value}&a.'
+  help-header: '&6&lRobbery commands &7(Page {page}/{pages})'
+  help-footer: '&7Use &e/robbery help <page> &7to see more commands.'
+  help-entries:
+  - '&e/robbery help [page] &7- Show the command list in pages.'
+  - '&e/robbery list &7- List all robberies with status, timer and location.'
+  - '&e/robbery stats [player] &7- Show personal or admin-selected statistics.'
+  - '&e/robbery top [type] [page] &7- Leaderboard for success, failed, attempts or money.'
+  - '&e/robbery wand &7- Get the region or vault selection tool.'
+  - '&e/robbery create <name> &7- Create a robbery from your wand selection.'
+  - '&e/robbery edit <name> &7- Open the robbery settings menu.'
+  - '&e/robbery vault <name> &7- Select vault blocks with your wand.'
+  - '&e/robbery region <name> &7- Reselect the robbery boundaries.'
+  - '&e/robbery start <name> &7- Force a robbery open.'
+  - '&e/robbery stop <name> &7- Force a robbery closed.'
+  - '&e/robbery delete <name> &7- Delete a robbery permanently.'
+  - '&e/robbery reload &7- Reload all editable settings and menus.'
+  - '&e/robbery cancel &7- Cancel wand selection or chat input.'
+  - '&e/robbery status &7- Alias for /robbery list.'
+  help-page-size: 5
+  stats-line: '&e{player}&7: &a{success} successful&7, &c{failed} failed&7, &f{attempts} attempts&7, &6${earned} earned&7. Rank: &e#{rank}'
+  stats-not-found: '&cNo stored player statistics found for that name.'
+  top-usage: '&eUsage: /robbery top <success|failed|attempts|money> [page]'
+  top-header: '&6&lRobbery Leaderboard &7({type}, page {page}/{pages})'
+  top-line: '&e#{rank} &f{player} &7- &6{value}'
+robbery:
+  opened: '&a&lROBBERY OPEN! &e{name} &7is open for &f{minutes} minutes&7. {escape}'
+  escape-announcement: '&eCrack the vault and escape the region to claim your rewards!'
+  instant-announcement: '&eCrack the vault to receive your rewards!'
+  escape-pending: '&eVault cracked in &f{name}&e! Escape the robbery area to receive your money and special loot.'
+  escape-actionbar: '&6Escape the robbery area to collect rewards for &e{name}&6!'
+  escape-reminder: '&eYou still have unclaimed rewards from &f{name}&e. Leave the robbery region to collect them.'
+  escape-success: '&aYou escaped the &e{name}&a robbery! Claiming your rewards.'
+  closed: '&c&lROBBERY CLOSED! &e{name} &7will reopen in &f{minutes} minutes&7.'
+  crack-start: '&eCracking &f{name}&e... Keep holding left click and aim at the vault.'
+  crack-actionbar: '&6Vault: &e{percent}% &7[{bar}&7]'
+  crack-cancelled: '&cVault cracking interrupted.'
+  crack-success: '&aVault cracked! You robbed &e{name}&a.'
+  success-title: '&a&lROBBERY SUCCESSFUL!'
+  success-subtitle: '&e{name} &7- &6${amount}'
+  money-received: '&aReceived &6${amount} &afrom the robbery.'
+  economy-command-failed: '&cThe economy command could not be executed. Tell an admin.'
+  reward-received: '&aBonus loot: &f{item}&a.'
+  inventory-full: '&eInventory full. Bonus rewards were dropped at your feet.'
+  guard-spawn: '&cBodyguards are guarding &e{name}&c!'
+  guard-alert: '&cYou triggered the security guards at &e{name}&c! Escape the area to lose their attention.'
+  closed-during-crack: '&cThe robbery closed before you cracked the vault.'
+  participants: '&7{name}: {state}; closes or opens in {remaining}.'
+gui:
+  main-title: '&8Robbery Setup: {name}'
+  rewards-title: '&8Special Rewards: {name} ({page})'
+  info:
+    name: '&6{name}'
+    lore:
+    - '&7State: &f{state}'
+    - '&7Region: &f{region}'
+    - '&7Vault: &f{vault}'
+    - '&7World: &f{world}'
+  open-time:
+    name: '&aOpening Duration: &f{value} min'
+    lore:
+    - '&7How long a robbery stays open.'
+    - '&eClick to edit via chat.'
+  close-time:
+    name: '&cClosed Cooldown: &f{value} min'
+    lore:
+    - '&7Wait until a robbery opens again.'
+    - '&eClick to edit via chat.'
+  crack-time:
+    name: '&eVault Crack Time: &f{value} seconds'
+    lore:
+    - '&7How long players hold left click.'
+    - '&eClick to edit via chat.'
+  payout:
+    name: '&6Economy Reward: &f${value}'
+    lore:
+    - '&7Console executes configured eco command.'
+    - '&eClick to edit via chat.'
+  guards:
+    name: '&cBodyguards: &f{value}'
+    lore:
+    - '&7Guards defend the robbery area.'
+    - '&eClick to toggle.'
+  guard-count:
+    name: '&cBodyguard Count: &f{value}'
+    lore:
+    - '&7Number of guards while open.'
+    - '&eClick to edit via chat.'
+  guard-type-title: '&8Choose Bodyguard: {name}'
+  guard-type:
+    name: '&eBodyguard Type: &f{value}'
+    lore:
+    - '&7Zombies, skeletons, raiders, and player-skinned guards.'
+    - '&eClick to open the selection menu.'
+  guard-skin:
+    name: '&bPlayer Guard Skin: &f{value}'
+    lore:
+    - '&7Used for the PLAYER bodyguard type.'
+    - '&7Enter a real Mojang Java username.'
+    - '&7Full-body mannequin with hostile mob AI.'
+    - '&eClick to edit via chat.'
+  escape-required:
+    name: '&6Require Escape: &f{value}'
+    lore:
+    - '&7When enabled, money and loot are paid'
+    - '&7only after leaving the robbery region.'
+    - '&7Pending rewards survive disconnects/restarts.'
+    - '&eClick to toggle.'
+  guard-equipment-title: '&8Bodyguard Equipment: {name}'
+  guard-equipment:
+    name: '&bEdit Bodyguard Equipment'
+    lore:
+    - '&7Configure up to 6 armor/hand slots.'
+    - '&7Unsupported slots will be locked.'
+    - '&eClick to edit.'
+  equipment-slot: '&b{slot}'
+  equipment-unsupported: '&cNot supported: {slot}'
+  equipment-instructions: '&7Put an item into the slot below.'
+  guard-health:
+    name: '&cGuard Max Health: &f{value}'
+    lore:
+    - '&7Maximum hit points for each guard.'
+    - '&eClick to edit (1-2048).'
+  guard-speed:
+    name: '&aGuard Speed: &f{value}'
+    lore:
+    - '&7Mob movement speed attribute.'
+    - '&eClick to edit (0.01-1.0).'
+  guard-damage:
+    name: '&cGuard Damage: &f{value}'
+    lore:
+    - '&7Mob attack damage attribute.'
+    - '&eClick to edit (0-200).'
+  guard-follow-range:
+    name: '&eFollow Range: &f{value} blocks'
+    lore:
+    - '&7Guards cannot pursue outside the region.'
+    - '&eClick to edit (2-128).'
+  guard-respawn-seconds:
+    name: '&bRespawn Cooldown: &f{value} seconds'
+    lore:
+    - '&7Time to wait after a guard dies.'
+    - '&70 = immediate.'
+    - '&eClick to edit (0-3600).'
+  guard-choice:
+    name: '&e{type}'
+    description: '&7Click to use this bodyguard type.'
+    selected: '&aCurrently selected'
+    select: '&eClick to select'
+  vault:
+    name: '&bSelect Vault Area'
+    lore:
+    - '&7Set both corners using the selection wand.'
+    - '&7Players hold LEFT CLICK on a block in this area.'
+    - '&eClick to begin selecting.'
+  region:
+    name: '&bReselect Robbery Region'
+    lore:
+    - '&7Change the robbery boundaries.'
+    - '&eClick to begin selecting.'
+  rewards:
+    name: '&dSpecial Rewards'
+    lore:
+    - '&7Store custom items with full metadata.'
+    - '&7Right-click each item to set its chance.'
+    - '&eClick to open reward editor.'
+  force-open:
+    name: '&aForce Open Now'
+    lore:
+    - '&eClick to open and announce.'
+  force-close:
+    name: '&cForce Close Now'
+    lore:
+    - '&eClick to close and announce.'
+  back:
+    name: '&7Back to Settings'
+    lore: []
+  previous:
+    name: '&ePrevious Page'
+    lore: []
+  next:
+    name: '&eNext Page'
+    lore: []
+  reward-info:
+    name: '&dReward Slots'
+    lore:
+    - '&7Put custom items in the top 45 slots.'
+    - '&7Right-click a saved item to set chance.'
+    - '&7Each chance rolls independently.'
+    - '&7Maximum 10 pages of rewards.'
+  locked:
+    name: '&cNot available'
+    lore: []

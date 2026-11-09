@@ -1,0 +1,25 @@
+# Discord webhook. Paste the full URL from Discord > Channel Settings > Integrations > Webhooks.
+enabled: false
+url: ''
+username: 'SimpleRobbery'
+avatar-url: ''
+# No @everyone or @role pings are sent. Discord mentions are deliberately disabled.
+events:
+  open: true
+  close: true
+  completed: true
+  created: false
+  deleted: false
+embed:
+  enabled: true
+  color-open: 5763719
+  color-close: 15548997
+  color-completed: 16766720
+  color-admin: 3447003
+  footer: 'SimpleRobbery'
+messages:
+  open: ':rotating_light: **{name}** is now open for **{minutes} minutes**! {escape}'
+  close: ':lock: **{name}** is now closed. Reopens in **{minutes} minutes**.'
+  completed: ':moneybag: **{player}** robbed **{name}** and received **${amount}**.'
+  created: ':tools: Robbery **{name}** was created.'
+  deleted: ':wastebasket: Robbery **{name}** was deleted.'

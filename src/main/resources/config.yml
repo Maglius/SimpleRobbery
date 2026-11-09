@@ -1,0 +1,49 @@
+# SimpleRobbery | Paper 26.2, Java 25
+# Console command executed on successful robbery; compatible with CMI / Essentials eco give.
+economy-command: 'eco give {player} {amount}'
+# Creative/Spectator players can't claim money/loot by default.
+allow-creative-robbery: false
+# Keep inventory + XP when a player dies inside a robbery region while it is open.
+# Only applies inside active robbery regions, NOT globally.
+keep-inventory-during-robbery: true
+success-title:
+  fade-in-ticks: 10
+  stay-ticks: 65
+  fade-out-ticks: 20
+# Maximum distance for cracking a vault block.
+max-vault-distance: 5.0
+# Optional vanilla block breaking visual progress. Vault blocks are protected from breaking.
+block-crack-effect: true
+# Prevent robbery guards (including invisible NPC combat controllers) igniting
+# from sunlight. Does not block normal fire/lava damage or fire attacks.
+# This also defaults to true for existing config.yml files without this key.
+guards-prevent-sunlight-burning: true
+# Once a vault-crack starts, check and replenish guards every N ticks while a robber remains in the region.
+guards-refresh-ticks: 100
+# Edit per-robbery values from the GUI.
+defaults:
+  open-minutes: 10
+  closed-minutes: 60
+  crack-seconds: 15
+  bodyguards-enabled: false
+  bodyguards-count: 3
+  bodyguards-health: 30.0
+  bodyguards-speed: 0.28
+  bodyguards-damage: 4.0
+  bodyguards-follow-range: 18.0
+  bodyguards-respawn-seconds: 30
+  # Select ZOMBIE, HUSK, DROWNED, SKELETON, STRAY, BOGGED,
+  # WITHER_SKELETON, PILLAGER, VINDICATOR, WITCH, RAVAGER, or PLAYER.
+  bodyguards-type: ZOMBIE
+  # For PLAYER guards, use a valid Java Edition player skin name.
+  bodyguards-skin: Steve
+  # If true, the player must escape the region after cracking to receive rewards.
+  require-escape: false
+  payout: 1000.0
+# Options for admin-created vaults and territory.
+max-region-blocks: 1000000
+max-vault-blocks: 500
+max-rewards-pages: 10
+# Progress bar is updated every 2 ticks.
+progress-bar-width: 16
+# All player texts (including broadcasts) are in message.yml.

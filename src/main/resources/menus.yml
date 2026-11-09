@@ -1,0 +1,334 @@
+# Editable GUI layouts and icon styles. Use /robbery reload to apply changes.
+# Legacy & color codes and hex: &#ff8800 or <#ff8800>.
+# For a Minecraft custom head, use:
+#   material: PLAYER_HEAD
+#   head-owner: Notch           # Java profile username (optional)
+#   head-texture: <base64>      # OR texture URL OR raw textures.minecraft.net hash
+# Custom heads are supported on every menu icon, including background and guard choices.
+# Slot numbering starts at 0. Each button can have a custom material, name and lore.
+# Do not overlap slots. All menu sizes must be multiples of 9 from 9-54.
+settings:
+  size: 54
+  title: '&8Robbery Setup: {name}'
+  background:
+    enabled: true
+    material: BLACK_STAINED_GLASS_PANE
+    name: '&8'
+    lore: []
+  buttons:
+    info:
+      slot: 4
+      material: MAP
+      name: '&6{name}'
+      lore:
+      - '&7State: &f{state}'
+      - '&7Region: &f{region}'
+      - '&7Vault: &f{vault}'
+      - '&7World: &f{world}'
+    open-time:
+      slot: 19
+      material: CLOCK
+      name: '&aOpening Duration: &f{value} min'
+      lore:
+      - '&7How long a robbery stays open.'
+      - '&eClick to edit via chat.'
+    close-time:
+      slot: 20
+      material: RECOVERY_COMPASS
+      name: '&cClosed Cooldown: &f{value} min'
+      lore:
+      - '&7Wait until a robbery opens again.'
+      - '&eClick to edit via chat.'
+    crack-time:
+      slot: 21
+      material: TRIPWIRE_HOOK
+      name: '&eVault Crack Time: &f{value} seconds'
+      lore:
+      - '&7How long players hold left click.'
+      - '&eClick to edit via chat.'
+    payout:
+      slot: 22
+      material: GOLD_INGOT
+      name: '&6Economy Reward: &f${value}'
+      lore:
+      - '&7Console executes configured eco command.'
+      - '&eClick to edit via chat.'
+    guards:
+      slot: 23
+      material: COPPER_GOLEM_STATUE
+      name: '&cBodyguards: &f{value}'
+      lore:
+      - '&7Guards defend the robbery area.'
+      - '&eClick to toggle.'
+    guard-count:
+      slot: 24
+      material: IRON_HELMET
+      name: '&cBodyguard Count: &f{value}'
+      lore:
+      - '&7Number of guards while open.'
+      - '&eClick to edit via chat.'
+    vault:
+      slot: 25
+      material: IRON_BLOCK
+      name: '&bSelect Vault Area'
+      lore:
+      - '&7Set both corners using the selection wand.'
+      - '&7Players hold LEFT CLICK on a block in this area.'
+      - '&eClick to begin selecting.'
+    rewards:
+      slot: 28
+      material: CHEST
+      name: '&dSpecial Rewards'
+      lore:
+      - '&7Store custom items with full metadata.'
+      - '&7Right-click each item to set its chance.'
+      - '&eClick to open reward editor.'
+    force-open:
+      slot: 29
+      material: LIME_DYE
+      name: '&aForce Open Now'
+      lore:
+      - '&eClick to open and announce.'
+    force-close:
+      slot: 30
+      material: RED_DYE
+      name: '&cForce Close Now'
+      lore:
+      - '&eClick to close and announce.'
+    region:
+      slot: 31
+      material: WOODEN_AXE
+      name: '&bReselect Robbery Region'
+      lore:
+      - '&7Change the robbery boundaries.'
+      - '&eClick to begin selecting.'
+    guard-equipment:
+      slot: 32
+      material: CHEST
+      name: '&bEdit Bodyguard Equipment'
+      lore:
+      - '&7Configure up to 6 armor/hand slots.'
+      - '&7Unsupported slots will be locked.'
+      - '&eClick to edit.'
+    guard-type:
+      slot: 33
+      material: ZOMBIE_SPAWN_EGG
+      name: '&eBodyguard Type: &f{value}'
+      lore:
+      - '&7Zombies, skeletons, raiders, and player-skinned guards.'
+      - '&eClick to open the selection menu.'
+    guard-skin:
+      slot: 34
+      material: PLAYER_HEAD
+      name: '&bPlayer Guard Skin: &f{value}'
+      lore:
+      - '&7Used for the PLAYER bodyguard type.'
+      - '&7Enter a real Mojang Java username.'
+      - '&7Full-body mannequin with hostile mob AI.'
+      - '&eClick to edit via chat.'
+    escape-required:
+      slot: 37
+      material: OAK_DOOR
+      name: '&6Require Escape: &f{value}'
+      lore:
+      - '&7When enabled, money and loot are paid'
+      - '&7only after leaving the robbery region.'
+      - '&7Pending rewards survive disconnects/restarts.'
+      - '&eClick to toggle.'
+    guard-health:
+      slot: 38
+      material: RED_DYE
+      name: '&cGuard Max Health: &f{value}'
+      lore:
+      - '&7Maximum hit points for each guard.'
+      - '&eClick to edit (1-2048).'
+    guard-speed:
+      slot: 39
+      material: SUGAR
+      name: '&aGuard Speed: &f{value}'
+      lore:
+      - '&7Mob movement speed attribute.'
+      - '&eClick to edit (0.01-1.0).'
+    guard-damage:
+      slot: 40
+      material: IRON_SWORD
+      name: '&cGuard Damage: &f{value}'
+      lore:
+      - '&7Mob attack damage attribute.'
+      - '&eClick to edit (0-200).'
+    guard-follow-range:
+      slot: 41
+      material: COMPASS
+      name: '&eFollow Range: &f{value} blocks'
+      lore:
+      - '&7Guards cannot pursue outside the region.'
+      - '&eClick to edit (2-128).'
+    guard-respawn-seconds:
+      slot: 42
+      material: CLOCK
+      name: '&bRespawn Cooldown: &f{value} seconds'
+      lore:
+      - '&7Time to wait after a guard dies.'
+      - '&70 = immediate.'
+      - '&eClick to edit (0-3600).'
+guard-types:
+  size: 45
+  title: '&8Choose Bodyguard: {name}'
+  background:
+    enabled: true
+    material: BLACK_STAINED_GLASS_PANE
+    name: '&8'
+    lore: []
+  choices:
+    ZOMBIE:
+      slot: 10
+      material: ZOMBIE_SPAWN_EGG
+      name: '&eZombie'
+      lore:
+      - '&7Click to select this guard type.'
+      - '&7Current: &f{value}'
+    HUSK:
+      slot: 11
+      material: HUSK_SPAWN_EGG
+      name: '&eHusk'
+      lore:
+      - '&7Click to select this guard type.'
+      - '&7Current: &f{value}'
+    DROWNED:
+      slot: 12
+      material: DROWNED_SPAWN_EGG
+      name: '&eDrowned'
+      lore:
+      - '&7Click to select this guard type.'
+      - '&7Current: &f{value}'
+    SKELETON:
+      slot: 13
+      material: SKELETON_SPAWN_EGG
+      name: '&eSkeleton'
+      lore:
+      - '&7Click to select this guard type.'
+      - '&7Current: &f{value}'
+    STRAY:
+      slot: 14
+      material: STRAY_SPAWN_EGG
+      name: '&eStray'
+      lore:
+      - '&7Click to select this guard type.'
+      - '&7Current: &f{value}'
+    BOGGED:
+      slot: 15
+      material: BOGGED_SPAWN_EGG
+      name: '&eBogged'
+      lore:
+      - '&7Click to select this guard type.'
+      - '&7Current: &f{value}'
+    WITHER_SKELETON:
+      slot: 16
+      material: WITHER_SKELETON_SPAWN_EGG
+      name: '&eWither Skeleton'
+      lore:
+      - '&7Click to select this guard type.'
+      - '&7Current: &f{value}'
+    PILLAGER:
+      slot: 19
+      material: PILLAGER_SPAWN_EGG
+      name: '&ePillager'
+      lore:
+      - '&7Click to select this guard type.'
+      - '&7Current: &f{value}'
+    VINDICATOR:
+      slot: 20
+      material: VINDICATOR_SPAWN_EGG
+      name: '&eVindicator'
+      lore:
+      - '&7Click to select this guard type.'
+      - '&7Current: &f{value}'
+    WITCH:
+      slot: 21
+      material: WITCH_SPAWN_EGG
+      name: '&eWitch'
+      lore:
+      - '&7Click to select this guard type.'
+      - '&7Current: &f{value}'
+    RAVAGER:
+      slot: 22
+      material: RAVAGER_SPAWN_EGG
+      name: '&eRavager'
+      lore:
+      - '&7Click to select this guard type.'
+      - '&7Current: &f{value}'
+    PLAYER:
+      slot: 23
+      material: PLAYER_HEAD
+      name: '&ePlayer'
+      lore:
+      - '&7Click to select this guard type.'
+      - '&7Current: &f{value}'
+  buttons:
+    back:
+      slot: 40
+      material: BARRIER
+      name: '&cBack / Exit'
+      lore:
+      - '&7Return to robbery setup.'
+equipment:
+  size: 54
+  title: '&8Bodyguard Equipment: {name}'
+  background:
+    enabled: true
+    material: BLACK_STAINED_GLASS_PANE
+    name: '&8'
+    lore: []
+  slots:
+    head: 13
+    chest: 22
+    legs: 31
+    feet: 40
+    hand: 20
+    off_hand: 24
+  buttons:
+    back:
+      slot: 49
+      material: BARRIER
+      name: '&cBack / Exit'
+      lore:
+      - '&7Save equipment and return.'
+  unsupported:
+    material: BARRIER
+    name: '&cNot supported: {slot}'
+    lore:
+    - '&7This mob type cannot use this equipment slot.'
+rewards:
+  size: 54
+  title: '&8Special Rewards: {name} ({page})'
+  background:
+    enabled: true
+    material: BLACK_STAINED_GLASS_PANE
+    name: '&8'
+    lore: []
+  content-slots: 0-44
+  buttons:
+    previous:
+      slot: 45
+      material: ARROW
+      name: '&ePrevious Page'
+      lore: []
+    reward-info:
+      slot: 49
+      material: BOOK
+      name: '&dReward Slots'
+      lore:
+      - '&7Put custom items in the top 45 slots.'
+      - '&7Right-click a saved item to set chance.'
+      - '&7Each chance rolls independently.'
+      - '&7Maximum 10 pages of rewards.'
+    back:
+      slot: 50
+      material: BARRIER
+      name: '&7Back to Settings'
+      lore: []
+    next:
+      slot: 53
+      material: ARROW
+      name: '&eNext Page'
+      lore: []

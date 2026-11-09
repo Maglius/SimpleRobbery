@@ -1,0 +1,18 @@
+name: SimpleRobbery
+version: 0.5.0-TEST
+main: dev.simplerobbery.SimpleRobbery
+api-version: '26.2'
+softdepend: [PlaceholderAPI]
+description: Configurable robbery regions, GUI vault editing, timed hold-to-crack, guards, NBT loot, Discord.
+commands:
+  robbery:
+    description: Robbery admin controls and robbery status
+    usage: /robbery help
+    aliases: [robberies, rob]
+permissions:
+  robbery.admin:
+    description: Can configure robberies and access the wand
+    default: op
+  robbery.use:
+    description: Can hold-left-click and crack robbery vaults
+    default: true

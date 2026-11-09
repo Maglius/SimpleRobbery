@@ -1,4 +1,4 @@
-# SimpleRobbery — Paper plugin
+# SimpleRobbery - Paper plugin [AI Made]
 
 A standalone Paper 26.2 Java 25 robbery plugin. **No resource pack required.**
 
